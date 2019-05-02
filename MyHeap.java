@@ -44,7 +44,20 @@ public class MyHeap{
   }
 
   private static void pushUp(int[] data,int index){
-
+    boolean pushed = false;
+    while (!pushed){
+      int a = (index - 1) / 2;
+      if (a < 0){
+        pushed = true;
+      } else {
+        if (data[index] > data[a]){
+          swap(data, a, index);
+          index = a;
+        } else {
+          pushed = true;
+        }
+      }
+    }
   }
   public static void heapify(int[] data){
 
@@ -63,7 +76,7 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-    int[] data = {16,1,10,8,7,9,3,2,4,14};
+    int[] data = {16,14,10,8,7,9,3,2,4,1};
     pushDown(data, data.length, 1);
     toString(data);
   }
