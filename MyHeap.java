@@ -42,7 +42,18 @@ public class MyHeap{
 
   }
 
+  public static void toString(int[] data){
+    String ans = "[";
+    for (int i=0; i<data.length-1; i++){
+      ans += data[i];
+    }
+    ans += data[data.length - 1] + "]";
+    System.out.println(ans);
+  }
+
   public static void main(int[] args){
-    
+    int[] data = {16,14,10,8,7,9,3,2,4,1};
+    pushDown(data, data.length, 0);
+
   }
 }
