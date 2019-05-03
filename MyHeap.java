@@ -66,7 +66,11 @@ public class MyHeap{
     }
   }
   public static void heapsort(int[] data){
-
+    heapify(data);
+    for (int lastIndex = data.length - 1; lastIndex > 0; lastIndex--){
+      swap(data, 0, lastIndex);
+      pushDown(data, lastIndex, 0);
+    }
   }
 
   public static void toString(int[] data){
